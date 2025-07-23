@@ -23,7 +23,7 @@ const AuthorWrapper: FC<Props> = ({ data: initialData }) => {
     setIsRefreshing(true)
     try {
           await new Promise(resolve => setTimeout(resolve, 300))
-      const response = await (await fetch('http://localhost:3000/api/author')).json();
+      const response = await (await fetch('/api/author')).json();
       console.log('refresh', response)
       setData(response)
     } catch (error) {
